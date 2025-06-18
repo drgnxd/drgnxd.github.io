@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dragonix005</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    <style>
+        /* --- 全体のスタイル設定 --- */
+        :root {
+            --bg-color: #121212; /* 背景色 */
+            --text-color: #e0e0e0; /* 基本の文字色 */
+            --accent-color: #00aaff; /* アクセントカラー（青系） */
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-color);
+        }
+        
+        /* --- コンテンツを画面中央に配置 --- */
+        .fullscreen-center {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            height: 100vh;
+            width: 100%;
+            padding: 20px;
+        }
+        
+        /* --- ユーザー名のスタイル --- */
+        h1 {
+            font-size: 8vw; /* 画面幅に応じてサイズが変わる */
+            margin-bottom: 30px;
+            font-weight: 700;
+            background: linear-gradient(45deg, var(--accent-color), #ffffff);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            word-break: break-all;
+        }
+
+        /* 小さい画面用のフォントサイズ調整 */
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 12vw;
+            }
+        }
+        @media (min-width: 1200px) {
+            h1 {
+                font-size: 96px; /* 最大サイズを指定 */
+            }
+        }
+
+        /* --- SNSリンクのスタイル --- */
+        .social-links a {
+            color: var(--text-color);
+            font-size: 48px;
+            margin: 0 20px;
+            transition: color 0.3s ease, transform 0.3s ease;
+            display: inline-block;
+        }
+
+        .social-links a:hover {
+            color: var(--accent-color);
+            transform: scale(1.2);
+        }
+
+    </style>
+</head>
+<body>
+
+    <main class="fullscreen-center">
+        <h1>Dragonix005</h1>
+        
+        <div class="social-links">
+            <a href="https://github.com/Dragonix005" target="_blank" aria-label="GitHub">
+                <i class="fa-brands fa-github"></i>
+            </a>
+            <a href="https://x.com/Dragonix005" target="_blank" aria-label="X">
+                <i class="fa-brands fa-x-twitter"></i>
+            </a>
+        </div>
+    </main>
+
+</body>
+</html>
