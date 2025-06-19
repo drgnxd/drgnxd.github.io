@@ -4,107 +4,139 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Dragonix005</title>
-     <link rel="icon" href="https://github.com/Dragonix005.png">
+    
+    <link rel="icon" href="https://github.com/Dragonix005.png?s=48">
+
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
-    <style>
-        /* --- 全体のスタイル設定 --- */
-        :root {
-            --bg-color: #121212; /* 背景色 */
-            --text-color: #e0e0e0; /* 基本の文字色 */
-            --accent-color: #00aaff; /* アクセントカラー（青系） */
-        }
 
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+    <style>
+        /* --- 1. グローバル設定 & カラー変数 --- */
+        :root {
+            --bg-color: #121212;
+            --text-color: #e0e0e0;
+            --accent-color: #00aaff;
+            --h1-gradient-end: #ffffff;
+        }
+        @media (prefers-color-scheme: light) {
+            :root {
+                --bg-color: #f5f5f7;
+                --text-color: #1d1d1f;
+                --accent-color: #007aff;
+                --h1-gradient-end: #333333;
+            }
+        }
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
         }
-
         body {
-            font-family: 'Poppins', sans-serif;
+            font-family: 'Poppins', 'Noto Sans JP', sans-serif;
             background-color: var(--bg-color);
             color: var(--text-color);
+            transition: background-color 0.3s ease, color 0.3s ease;
         }
-        
-        /* --- コンテンツを画面中央に配置 --- */
+
+        /* --- 2. レイアウト --- */
         .fullscreen-center {
             display: flex;
             flex-direction: column;
             justify-content: center;
             align-items: center;
             text-align: center;
-            height: 100vh;
+            min-height: 100vh;
             width: 100%;
-            padding: 20px;
-            }
+            padding: 40px 20px;
+        }
 
-	      /* プロフィール画像のスタイルをCSSに追加 */
-	     .profile-icon {
-    width: 120px;
-    height: 120px;
-    border-radius: 50%;
-    margin-bottom: 30px;
-    object-fit: cover;
-}
-        
-        /* --- ユーザー名のスタイル --- */
-        h1 {
-            font-size: 8vw; /* 画面幅に応じてサイズが変わる */
+        /* ★ステップ1：デフォルトでmainを透明にする★ */
+        main {
+            opacity: 0; /* 最初は透明 */
+            transition: opacity 0.5s ease-in-out; /* 0.5秒かけてフワッと表示 */
+        }
+        /* ★ステップ3：'loaded'クラスがついたら不透明にする★ */
+        body.loaded main {
+            opacity: 1; /* 'loaded'クラスがついたら表示 */
+        }
+
+        /* --- 3. コンポーネント別スタイル --- */
+        .profile-icon {
+            width: 120px;
+            height: 120px;
+            border-radius: 50%;
             margin-bottom: 30px;
+            object-fit: cover;
+        }
+        h1 {
+            font-size: 8vw;
+            margin-bottom: 40px;
             font-weight: 700;
-            background: linear-gradient(45deg, var(--accent-color), #ffffff);
+            background: linear-gradient(45deg, var(--accent-color), var(--h1-gradient-end));
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             word-break: break-all;
         }
-
-        /* 小さい画面用のフォントサイズ調整 */
-        @media (max-width: 768px) {
-            h1 {
-                font-size: 12vw;
-            }
+        .social-links {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
         }
-        @media (min-width: 1200px) {
-            h1 {
-                font-size: 96px; /* 最大サイズを指定 */
-            }
-        }
-
-        /* --- SNSリンクのスタイル --- */
         .social-links a {
             color: var(--text-color);
-            font-size: 48px;
-            margin: 0 20px;
-            transition: color 0.3s ease, transform 0.3s ease;
+            font-size: 36px;
             display: inline-block;
+            transition: color 0.2s ease-out, transform 0.2s ease-out;
         }
-
         .social-links a:hover {
             color: var(--accent-color);
-            transform: scale(1.2);
+            transform: scale(1.1);
         }
 
+        /* --- 4. レスポンシブ対応 --- */
+        @media (max-width: 768px) {
+            h1 { font-size: 12vw; }
+        }
+        @media (min-width: 1200px) {
+            h1 { font-size: 96px; }
+        }
     </style>
 </head>
 <body>
-
- <main class="fullscreen-center">
-   <img src="https://github.com/Dragonix005.png" alt="プロフィール画像" class="profile-icon">
-     
+    <main class="fullscreen-center">
+        <img src="https://github.com/Dragonix005.png?s=240" alt="プロフィール画像" class="profile-icon">
         <h1>Dragonix005</h1>
-        
         <div class="social-links">
-            <a href="https://github.com/Dragonix005" target="_blank" aria-label="GitHub">
+            <a href="https://github.com/Dragonix005" target="_blank" rel="noopener noreferrer" aria-label="GitHub">
                 <i class="fa-brands fa-github"></i>
             </a>
-            <a href="https://x.com/Dragonix005" target="_blank" aria-label="X">
+            <a href="https://x.com/Dragonix005" target="_blank" rel="noopener noreferrer" aria-label="X">
                 <i class="fa-brands fa-x-twitter"></i>
             </a>
         </div>
     </main>
 
+    <script>
+        // このページのメイン画像（プロフィール画像）を指定
+        const imageUrl = "https://github.com/Dragonix005.png?s=240";
+        
+        // JavaScriptで画像の読み込みを開始
+        const profileImg = new Image();
+        profileImg.src = imageUrl;
+
+        // 画像の読み込みが完了した時に実行される処理
+        profileImg.onload = function() {
+            // 読み込みが完了したら、bodyタグに 'loaded' というクラスを追加する
+            document.body.classList.add('loaded');
+        };
+
+        // 万が一、画像の読み込みに失敗した場合でも表示は行う
+        profileImg.onerror = function() {
+            document.body.classList.add('loaded');
+        };
+    </script>
 </body>
 </html>
