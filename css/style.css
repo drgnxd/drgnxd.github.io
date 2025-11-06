@@ -1,13 +1,10 @@
-/* --- 1. グローバル設定 & カラー変数 --- */
 :root {
-    /* 基本の配色（ダークモード） */
     --bg-color: #121212;
     --text-color: #e0e0e0;
     --accent-color: #00aaff;
     --h1-gradient-end: #ffffff;
 }
 
-/* OSがライトモードの際の配色 */
 @media (prefers-color-scheme: light) {
     :root {
         --bg-color: #f5f5f7;
@@ -30,7 +27,6 @@ body {
     transition: background-color 0.3s ease, color 0.3s ease;
 }
 
-/* --- 2. レイアウト --- */
 .fullscreen-center {
     display: flex;
     flex-direction: column;
@@ -42,16 +38,15 @@ body {
     padding: 40px 20px;
 }
 
-/* 読み込み時フェードイン用スタイル */
 main {
-    opacity: 0; /* 最初は透明 */
-    transition: opacity 0.5s ease-in-out; /* 0.5秒かけてフワッと表示 */
-}
-body.loaded main {
-    opacity: 1; /* 'loaded'クラスがついたら表示 */
+    opacity: 0;
+    transition: opacity 0.5s ease-in-out;
 }
 
-/* --- 3. コンポーネント別スタイル --- */
+body.loaded main {
+    opacity: 1;
+}
+
 .profile-icon {
     width: 120px;
     height: 120px;
@@ -78,7 +73,7 @@ h1 {
 
 .social-links a {
     color: var(--text-color);
-    font-size: 36px;
+    font-size: clamp(36px, 4.5vw, 40px);
     display: inline-block;
     transition: color 0.2s ease-out, transform 0.2s ease-out;
 }
@@ -88,10 +83,14 @@ h1 {
     transform: scale(1.1);
 }
 
-/* --- 4. レスポンシブ対応 --- */
 @media (max-width: 768px) {
-    h1 { font-size: 12vw; }
+    h1 {
+        font-size: 12vw;
+    }
 }
+
 @media (min-width: 1200px) {
-    h1 { font-size: 96px; }
+    h1 {
+        font-size: 96px;
+    }
 }
