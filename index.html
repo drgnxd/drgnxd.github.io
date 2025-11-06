@@ -15,11 +15,10 @@
 
     <link rel="stylesheet" href="css/style.css">
 
-    <!-- 追加: social アイコンの簡易スタイル（必要に応じて外部CSSへ移動してください） -->
     <style>
       .social-links { display:flex; gap:12px; align-items:center; margin-top:12px; }
+      /* <i> タグ (Font Awesome) も <a> タグのフォントサイズを継承します */
       .social-links a { color: inherit; text-decoration:none; font-size:1.2rem; display:inline-flex; align-items:center; gap:8px; }
-      .social-links svg { width:20px; height:20px; display:inline-block; vertical-align:middle; }
     </style>
 </head>
 <body>
@@ -32,24 +31,17 @@
             <a href="https://github.com/Dragonix005" target="_blank" rel="noopener noreferrer" aria-label="GitHub">
                 <i class="fa-brands fa-github"></i>
             </a>
+            
             <a href="https://x.com/Dragonix005" target="_blank" rel="noopener noreferrer" aria-label="X">
                 <i class="fa-brands fa-x-twitter"></i>
             </a>
 
-            <!-- Bluesky -->
             <a href="https://bsky.app/profile/dragonix005.bsky.social" target="_blank" rel="noopener noreferrer" aria-label="Bluesky">
-                <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false" xmlns="http://www.w3.org/2000/svg">
-                  <circle cx="12" cy="12" r="10" fill="#0ea5e9"></circle>
-                  <path d="M7 12c2-4 8-4 10 0-2-2-6-2-8 0" fill="#fff"></path>
-                </svg>
+                <i class="fa-brands fa-bluesky"></i>
             </a>
 
-            <!-- Mastodon (rel="me" を付与) -->
             <a href="https://mastodon.social/@dragonix005" target="_blank" rel="me noopener noreferrer" aria-label="Mastodon">
-                <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false" xmlns="http://www.w3.org/2000/svg">
-                  <rect rx="4" ry="4" width="22" height="18" x="1" y="3" fill="#6364ff"></rect>
-                  <circle cx="12" cy="11" r="4" fill="#fff"></circle>
-                </svg>
+                <i class="fa-brands fa-mastodon"></i>
             </a>
         </div>
     </main>
